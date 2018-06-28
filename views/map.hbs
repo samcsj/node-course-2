@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>{{pageTitle}}</title>
+	</head>
+
+	<body>
+		<input id="text1" type="text" />
+		<button id="button1">Click</button>
+
+		<p id="showText1">hello temp</p>
+
+		<div id="map" style="width:400px;height:400px;">Map will show here</div>
+
+	</body>
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlqClXHjSIB5rvXyZwTVNP39-NwwiyVYI&callback=myMap"></script>
+
+	<script>
+		function myMap() {
+			var mapOptions = {
+				center: new google.maps.LatLng(21, 23),
+				zoom: 10
+			};
+
+			var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+		}
+	</script>
+
+
+</html>

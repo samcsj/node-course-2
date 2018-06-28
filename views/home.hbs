@@ -11,4 +11,35 @@
 
 		{{> footer}}
 	</body>
+
+	<input id="text1" type="text" />
+	<button id="button1">Click</button>
+
+	<p id="showText1">hello temp</p>
+
+	<div id="map" style="width:400px;height:400px">Map will show here</div>
+
+	<script src="https://distribute.thelorry.com/plugins/jquery/jquery.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+
+	<script>
+		$(document).ready(function() {
+			$('#button1').on('click', function() {
+				console.log( $('#text1').val() );
+				$('#showText1').html( $('#text1').val() )
+			})			
+		});
+	</script>
+
+	<script>
+		function myMap() {
+			var mapOptions = {
+				center: new google.maps.LatLng(21, 23),
+				zoom: 10,
+				mapTypeId: google.maps.MayTypeId.HYBRID
+			}
+
+			var map = new google.maps.Map($('#map'), mapOptions)
+		}
+	</script>
 </html>

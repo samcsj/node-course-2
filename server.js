@@ -20,12 +20,12 @@ app.use((req, res, next) => {
 		}
 	})
 
-	next();
+	next(); 
 })
-
-app.use((req, res, next) => {
-	res.render('maintanence.hbs')
-})
+  
+// app.use((req, res, next) => {
+// 	res.render('maintanence.hbs')
+// })
 
 app.use(express.static(__dirname + '/public'))
 
@@ -46,13 +46,10 @@ app.get('/', (req, res) => {
 			'bikes'
 		]
 	}) 
-})
+})   
 
-app.get('/maintanence', (req, res) => {
-	res.render('maintanence.hbs', {
-		pageTitle: 'Maintanence',
-		message: 'We will get back to you soon!'
-	})
+app.get('/map', (req, res) => {
+	res.render('map.hbs')  
 })
 
 app.get('/home', (req, res) => {
